@@ -1,0 +1,32 @@
+{
+    "name": "enerhar",
+    "version": "0.1.0",
+    "description": "Open sours RPG. Write on NodeJS.",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "node .",
+        "build": "node ./bin/build.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/G0od1k/enerhar.git"
+    },
+    "keywords": [
+        "game",
+        "rpg",
+        "fantasy"
+    ],
+    "author": "G0od1k <g0cd1k@gmail.com> (https://github.com/G0od1k)",
+    "license": "MIT",
+    "devDependencies": {
+        "madge": "^5.0.1",
+        "terser-webpack-plugin": "^5.3.6",
+        "webpack": ">=5.0.0",
+        "webpack-cli": "^4.10.0"
+    },
+    "private": true,
+    "bugs": {
+        "url": "https://github.com/G0od1k/enerhar/issues"
+    },
+    "homepage": "https://github.com/G0od1k/enerhar#readme"
+}
