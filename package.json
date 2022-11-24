@@ -5,7 +5,8 @@
     "main": "src/index.js",
     "scripts": {
         "start": "node .",
-        "build": "node ./bin/build.js"
+        "build": "node ./bin/build.js",
+        "graph": "node ./bin/graph.js"
     },
     "repository": {
         "type": "git",
