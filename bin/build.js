@@ -21,7 +21,7 @@ langs.forEach((lang) => {
             entry: `./src/index.js`,
             output: {
                 path: path.resolve(__dirname, `../build`),
-                filename: `${pkg.name}@${pkg.version}[${lang}].js`,
+                filename: `${pkg.name}@${pkg.version}+lang-${lang}.js`,
             },
             target: `node`,
             externalsPresets: {
