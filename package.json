@@ -6,7 +6,8 @@
     "scripts": {
         "start": "node .",
         "build": "node ./bin/build.js",
-        "graph": "node ./bin/graph.js"
+        "graph": "node ./bin/graph.js",
+        "test:lang": "node ./bin/lang.test.js"
     },
     "repository": {
         "type": "git",
