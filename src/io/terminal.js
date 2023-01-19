@@ -12,7 +12,7 @@ class IO {
         this.out("\x1b[?25l")
 
         // Onresize
-        process.stdout.on(`resize`, () => this.onresize())
+        process.stdout.on(`resize`, () => this.#onresize())
 
         const stdin = process.stdin
         require(`readline`).emitKeypressEvents(stdin)
@@ -57,9 +57,9 @@ class IO {
     #ctrlClear() {
         this.out(`\x1bc`)
     }
-    onresize() {
+    #onresize() {
         this.#clear()
-        if (!this.isCorrectSize()) {
+        if (!this.#isCorrectSize()) {
             this.#ctrlClear()
             this.out(
                 process.stdout.columns +
@@ -74,7 +74,7 @@ class IO {
             this.main.out()
         }
     }
-    isCorrectSize() {
+    #isCorrectSize() {
         return (
             this.main.cfg.displayWidth <= process.stdout.columns &&
             this.main.cfg.displayHeight <= process.stdout.rows
