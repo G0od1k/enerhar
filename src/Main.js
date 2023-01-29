@@ -1,5 +1,7 @@
-const Menu = require(`./Menu`)
 const IO = require(`./io/terminal`)
+
+const Menu = require(`./Menu`)
+const tui = require(`./tui`)
 
 class Main {
     constructor() {
@@ -14,36 +16,36 @@ class Main {
         this.mainMenu()
     }
     mainMenu() {
-        let selected = ""
         const menu = new Menu(
             this,
-            [
-                ["Test", undefined, undefined],
-                ["Menu", "Cent", "Car"],
-                ["Three", undefined, "Six"],
-                ["Four", undefined, undefined],
-                ["Left", "Right", undefined],
-                ["Five", undefined, undefined],
-            ],
-            (menu) => {
-                selected = menu.val
-            }
+            [["Test"], ["Menu"], ["Three"], ["Four"], ["Tři"], ["Five"]],
+            (menu) => {}
         )
 
         this.out = () => {
             this.io.out(
-                menu.map
-                    .map((x) =>
-                        x
+                new tui()
+                    .box(64, 18, " ")
+                    .inject(
+                        menu.map
+                            .flat()
                             .map(
                                 (x) =>
-                                    (({ [selected]: "# ", [menu.val]: "> " }[
-                                        x
-                                    ] ?? "  ") + (x ?? ""))
+                                    new tui(x)
+                                        .select(menu.val == x, `>>-> %0 <-<<`)
+                                        .center(undefined, 1, " ").value
                             )
-                            .join(`\t`)
+                            .join(`\n`),
+                        0,
+                        5
                     )
-                    .join(`\n`)
+                    .inject(
+                        this.pkg.version +
+                            "+lang-" +
+                            this.lang["language.code"],
+                        0,
+                        -1
+                    ).value
             )
         }
 

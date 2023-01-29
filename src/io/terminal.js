@@ -1,3 +1,5 @@
+const tui = require("../tui")
+
 class IO {
     /**
      * IO constructor
@@ -29,7 +31,6 @@ class IO {
         if (key && key.name == `f4`) this.main.quit()
         if (key && key.name == `c` && key.ctrl) {
             this.#ctrlClear()
-            this.main.out()
         }
 
         key.alt = key.meta
@@ -46,16 +47,23 @@ class IO {
 
         this.main.keyE(key)
     }
-    out(text = ``) {
+    out(text = ``, raw = false) {
         this.#clear()
-        process.stdout.write(text)
+        process.stdout.write(
+            raw
+                ? text
+                : new tui(text).center(
+                      process.stdout.columns,
+                      process.stdout.rows
+                  ).value + `\x1b[?25l`
+        )
     }
     #clear() {
         // this.out(`\x1bc`)
         console.clear()
     }
     #ctrlClear() {
-        this.out(`\x1bc`)
+        this.out(`\x1bc`, true)
     }
     #onresize() {
         this.#clear()
