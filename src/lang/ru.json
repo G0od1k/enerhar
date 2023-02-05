@@ -1,4 +1,5 @@
 {
     "language.code": "ru",
-    "language.self_name": "Русский"
+    "language.self_name": "Русский",
+    "io.message.resize": "Пожалуиста, измените размер до ⩾%0, текущий размер %1"
 }

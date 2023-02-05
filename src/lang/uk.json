@@ -1,4 +1,5 @@
 {
     "language.code": "uk",
-    "language.self_name": "Українська"
+    "language.self_name": "Українська",
+    "io.message.resize": "Будь ласка, змініть розмір до ⩾%0, поточний розмір %1"
 }

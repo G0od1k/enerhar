@@ -70,13 +70,13 @@ class IO {
         if (!this.#isCorrectSize()) {
             this.#ctrlClear()
             this.out(
-                process.stdout.columns +
-                    `\xd7` +
-                    process.stdout.rows +
-                    " => " +
+                new tui(this.main.lang["io.message.resize"]).comp(
+                    process.stdout.columns + `\xd7` + process.stdout.rows,
                     this.main.cfg.displayWidth +
-                    `\xd7` +
-                    this.main.cfg.displayHeight
+                        `\xd7` +
+                        this.main.cfg.displayHeight
+                ).value,
+                true
             )
         } else {
             this.main.out()

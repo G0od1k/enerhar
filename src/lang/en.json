@@ -1,4 +1,5 @@
 {
     "language.code": "en",
-    "language.self_name": "English"
+    "language.self_name": "English",
+    "io.message.resize": "Please resize to ⩾%0, current size %1"
 }
