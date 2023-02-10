@@ -39,7 +39,7 @@ langs.forEach((lang) => {
             },
             plugins: [
                 new webpack.NormalModuleReplacementPlugin(
-                    /lang\/\w+/,
+                    /\.\/lang\/\w+/,
                     `./lang/${lang}.json`
                 ),
                 new webpack.BannerPlugin({
