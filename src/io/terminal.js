@@ -63,7 +63,7 @@ class IO {
         console.clear()
     }
     #ctrlClear() {
-        this.out(`\x1bc`, true)
+        this.out(`\x1b[3J\x1b[2J\x1b[1J\x1bc`, true)
     }
     #onresize() {
         this.#clear()
