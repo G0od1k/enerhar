@@ -1,5 +1,9 @@
 {
     "language.code": "ru",
     "language.self_name": "Русский",
-    "io.message.resize": "Пожалуиста, измените размер до ⩾%0, текущий размер %1"
+    "io.message.resize": "Пожалуиста, измените размер до ⩾%0, текущий размер %1",
+    "menu.main_menu.new_game": "Новая Игра",
+    "menu.main_menu.load_game": "Загрузить Игру",
+    "menu.main_menu.what_that": "Что это?",
+    "menu.main_menu.quit": "Выйти"
 }

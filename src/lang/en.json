@@ -1,5 +1,9 @@
 {
     "language.code": "en",
     "language.self_name": "English",
-    "io.message.resize": "Please resize to ⩾%0, current size %1"
+    "io.message.resize": "Please resize to ⩾%0, current size %1",
+    "menu.main_menu.new_game": "New Game",
+    "menu.main_menu.load_game": "Load Game",
+    "menu.main_menu.what_that": "What that?",
+    "menu.main_menu.quit": "Quit"
 }

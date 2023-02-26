@@ -18,26 +18,39 @@ class Main {
     mainMenu() {
         const menu = new Menu(
             this,
-            [["Test"], ["Menu"], ["Three"], ["Four"], ["Tři"], ["Five"]],
-            (menu) => {}
+            [["new_game"], ["load_game"], ["what_that"], ["quit"]],
+            (menu) =>
+                ({
+                    new_game: () => {},
+                    load_game: () => {},
+                    what_that: () => {},
+                    quit: () => {
+                        this.quit()
+                    },
+                }[menu.val]())
         )
 
         this.out = () => {
             this.io.out(
                 new tui()
-                    .box(64, 18, " ")
+                    .box(64, 18)
+                    .inject(
+                        ` _______ _       _______ _______         _______ _______\n(  ____ ( (    /(  ____ (  ____ |\\     /(  ___  (  ____ )\n| (    \\|  \\  ( | (    \\| (    )| )   ( | (   ) | (    )|\n| (__   |   \\ | | (__   | (____)| (___) | (___) | (____)|\n|  __)  | (\\ \\) |  __)  |     __|  ___  |  ___  |     __)\n| (     | | \\   | (     | (\\ (  | (   ) | (   ) | (\\ (\n| (____/| )  \\  | (____/| ) \\ \\_| )   ( | )   ( | ) \\ \\__\n(_______|/    )_(_______|/   \\__|/     \\|/     \\|/   \\__/`,
+                        3,
+                        0
+                    )
                     .inject(
                         menu.map
                             .flat()
                             .map(
                                 (x) =>
-                                    new tui(x)
+                                    new tui(this.lang["menu.main_menu." + x])
                                         .select(menu.val == x, `>>-> %0 <-<<`)
                                         .center(undefined, 1, " ").value
                             )
                             .join(`\n`),
                         0,
-                        5
+                        10
                     )
                     .inject(
                         this.pkg.version +

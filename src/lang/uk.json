@@ -1,5 +1,9 @@
 {
     "language.code": "uk",
     "language.self_name": "Українська",
-    "io.message.resize": "Будь ласка, змініть розмір до ⩾%0, поточний розмір %1"
+    "io.message.resize": "Будь ласка, змініть розмір до ⩾%0, поточний розмір %1",
+    "menu.main_menu.new_game": "Нова Гра",
+    "menu.main_menu.load_game": "Завантажити Гру",
+    "menu.main_menu.what_that": "Що це?",
+    "menu.main_menu.quit": "Вийти"
 }
